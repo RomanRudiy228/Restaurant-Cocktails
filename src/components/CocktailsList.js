@@ -1,38 +1,30 @@
 import { Link } from "react-router-dom";
 import { useCocktailsList } from "../hooks/useCocktailsList";
+import Layout from "./Layout";
+import "../styles/CocktailList.css";
 
 const CocktailsList = () => {
-  const { cocktails, topCocktails, loading, error } = useCocktailsList();
+  const { cocktails, loading, error } = useCocktailsList();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
-      <h1>Wellcome to our cafe!</h1>    
-
-      <h2>🔥 TOP Cocktails</h2>
-      <ul>
-        {topCocktails.map(cocktail => (
-          <li key={cocktail.idDrink}>
-            <Link to={`/cocktail/${cocktail.idDrink}`}>
-              <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} width="50" /> {cocktail.strDrink}
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <h2>🍹 All Cocktails</h2>
-      <ul>
-        {cocktails.map(cocktail => (
-          <li key={cocktail.idDrink}>
-            <Link to={`/cocktail/${cocktail.idDrink}`}>
-              <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} width="50" /> {cocktail.strDrink}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Layout>
+      <div className="cocktails-list-container">  
+        <h1>🍹 All Cocktails</h1>
+        <div className="cocktails-list-grid">
+          {cocktails.map(cocktail => (
+            <div className="cocktail-list-card" key={cocktail.idDrink}>
+              <Link to={`/cocktail/${cocktail.idDrink}`}>
+                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+                <p>{cocktail.strDrink}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Layout>
   );
 }
 

@@ -1,10 +1,39 @@
-const Home = () => {
-    return (
-        <div className="home">
-            <h1>Wellcome to our Cocktail Café!</h1>
-            <p>To select a cocktail use the search or filter.</p>    
-        </div>
-    );
-}
+import { Link } from "react-router-dom";
+import { useCocktailsList } from "../hooks/useCocktailsList";
+import "../styles/Home.css";
+import Layout from "../components/Layout";
 
-export default Home; 
+const Home = () => {
+    const { topCocktails, loading, error } = useCocktailsList();
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>{error}</p>;
+
+    return (
+        <Layout>
+            <div className="home-main-container">
+                <div className="home-header">
+                    <h1>Welcome to our Cocktail Café!</h1>
+                    <h2>🔥 Top Cocktails</h2>
+                </div>
+
+                <div className="home-cocktails-grid">
+                    {topCocktails.map(cocktail => (
+                        <div key={cocktail.idDrink} className="home-cocktail-card">
+                            <Link to={`/cocktail/${cocktail.idDrink}`}>
+                                <img
+                                    src={cocktail.strDrinkThumb}
+                                    alt={cocktail.strDrink}
+                                    className="home-cocktail-img"
+                                />
+                                <h3 className="home-cocktail-name">{cocktail.strDrink}</h3>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </Layout>
+    );
+};
+
+export default Home;

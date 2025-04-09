@@ -1,0 +1,82 @@
+header {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff0000; 
+  text-decoration: none;
+}
+
+header .search-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 50%;
+}
+
+header .search-container input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #aeaeae;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+header .search-container input:focus {
+  border-color: #ff0000;
+}
+
+header .search-container button {
+  background-color: #ec4899;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+header .search-container button:hover {
+  background-color: #db2777;
+}
+
+header .nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .nav-buttons a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+header .nav-buttons a:hover {
+  color: #ff0000;
+}
+
+header .cart-icon {
+  position: relative;
+}
+
+header .cart-icon span {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 999px;
+}

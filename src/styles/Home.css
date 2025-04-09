@@ -1,0 +1,52 @@
+.home-main-container {
+    padding: 5px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+  }
+  
+  .home-header {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .home-cocktails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .home-cocktail-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .home-cocktail-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .home-cocktail-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .home-cocktail-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .home-cocktail-name {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+    

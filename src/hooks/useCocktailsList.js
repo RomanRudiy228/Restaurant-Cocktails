@@ -13,7 +13,7 @@ export function useCocktailsList() {
         const data = await res.json();
         setCocktails(data.drinks);
 
-        const topIds = ["11007","11000","11006"];
+        const topIds = ["11007","11000","11006", "11008", "11012"];
         const topData = await Promise.all (
             topIds.map(id => 
                 fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`).then(res => res.json())

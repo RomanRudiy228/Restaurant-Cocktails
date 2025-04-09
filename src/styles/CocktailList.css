@@ -1,0 +1,43 @@
+.cocktails-list-container {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.cocktails-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.cocktail-list-card {
+  background-color: #aeadad80;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cocktail-list-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cocktail-list-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+
+.cocktail-list-card p {
+  padding: 10px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.cocktail-list-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
