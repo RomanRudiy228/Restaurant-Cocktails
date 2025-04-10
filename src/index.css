@@ -3,6 +3,7 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: linear-gradient(135deg, #f5ffe8, #fcdcdc, #f3e8d8);
 }
 
 .cart {

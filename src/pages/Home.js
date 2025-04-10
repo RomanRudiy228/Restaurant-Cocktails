@@ -6,8 +6,8 @@ import Layout from "../components/Layout";
 const Home = () => {
     const { topCocktails, loading, error } = useCocktailsList();
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>{error}</p>;
+    if (loading) return <p style={{ textAlign: "center", marginTop: "50px" }}>Loading...</p>;
+    if (error) return <p style={{ textAlign: "center", marginTop: "50px" }}>{error}</p>;
 
     return (
         <Layout>

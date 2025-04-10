@@ -7,16 +7,23 @@ const Header = () => {
         <a href="/" className="logo">CocktailCafé</a>
 
         <div className="search-container">
-          <input type="text" placeholder="Search cocktails..." />
-          {/* <button><Search size={20} /></button> */}
+            <input
+              type="text"
+              placeholder="Search cocktails..."
+              className="search-input"
+            />
+            <i className='bx bx-search search-icon'></i>
         </div>
 
         <div className="nav-buttons">
           <Link to="/cocktails-list" className="nav-cocktails">All Cocktails</Link>
-          <a href="/cart" className="cart-icon">
-          {/* <ShoppingCart size={24} /> */}
-          <span>2</span>
-          </a>
+
+          <div className="cart-wrapper">
+            <Link to="/cart" className="cart-button">
+              🛒 Cart
+            </Link>
+            <span className="cart-count">2</span>
+          </div>
         </div>
     </header>
   );
